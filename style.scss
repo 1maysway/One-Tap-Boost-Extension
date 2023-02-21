@@ -1,0 +1,113 @@
+.redirect-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    transition: background-color 0.3s ease-in-out, width 0.3s ease-in-out;
+    //transition: background-color 0.3s ease-in-out;
+    //transition: width 0.6s ease-in-out;
+    h1 {
+        transition: all 0.3s ease-in-out;
+        z-index: 10;
+    }
+    a {
+        transition: all 0.3s ease-in-out;
+    }
+    &:hover {
+        background-color: black;
+        color: white;
+        h1 {
+            transform: scale(2);
+            margin-bottom: 40px;
+        }
+        a {
+            outline: 2px solid white;
+            background-color: black;
+            color: white;
+        }
+        width: 60%;
+    }
+    cursor: pointer;
+    p {
+        margin: 0;
+    }
+    width: 50%;
+}
+
+.left-col {
+    border-right: 3px solid black;
+}
+
+.left-col {
+    border-left: 3px solid black;
+}
+
+.redirect-row {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#container {
+    height: 937px;
+    padding: 0;
+}
+
+.mw-btn {
+    background-color: white;
+    color: black;
+    border: none;
+    //outline: 2px solid #0a58ca;
+    &:hover {
+        background-color: white;
+        color: black;
+        outline: 2px solid black;
+        transform: scale(1.2);
+    }
+    &:focus {
+        box-shadow: none;
+        background-color: white;
+        color: black;
+        //outline: 2px solid black;
+    }
+}
+
+.block {
+    position: relative;
+}
+
+//.block:hover {
+.block:before,
+.block:after {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: -4px;
+    //background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
+    background: linear-gradient(45deg, #3D9DD9, #52C5F2, #3A8C75, #BF9B30, #D9AF8B, #3D9DD9, #52C5F2, #3A8C75, #BF9B30, #D9AF8B);
+    background-size: 400%;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    z-index: -1;
+    animation: steam 20s linear infinite;
+    border-radius: 10px;
+}
+
+//}
+@keyframes steam {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.block:after {
+    filter: blur(20px);
+}
